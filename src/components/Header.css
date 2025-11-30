@@ -1,0 +1,274 @@
+* {
+  font-family: 'Montserrat','Poppins', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d0d0d;
+  color: white;
+  padding: 0 80px;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Centered Navigation */
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Hover Animation for Links */
+.nav-links li a::before,
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: -4px;
+  background-color: #00bcd4;
+  transition: width 0.4s ease;
+}
+
+.nav-links li a::before { left: 0; }
+.nav-links li a::after { right: 0; }
+
+.nav-links li a:hover::before,
+.nav-links li a:hover::after {
+  width: 50%;
+}
+
+/* Resume Button (Desktop + Mobile same hover effect) */
+.resume-btn {
+  position: relative;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.resume-btn::before,
+.resume-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.resume-btn::before { top: 0; left: 0; }
+.resume-btn::after { bottom: 0; right: 0; }
+
+.resume-btn:hover::before,
+.resume-btn:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: #00bcd4;
+  opacity: 1;
+}
+
+.resume-btn:hover {
+  background-color: #00bcd4;
+  color: #0d0d0d;
+  transition-delay: 0.3s;
+}
+
+/* ----- MOBILE VIEW ----- */
+@media (max-width: 768px) {
+  .mobile-header {
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 45px;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.9);
+    backdrop-filter: blur(5px);
+    z-index: 1002;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    z-index: 1003;
+  }
+
+  .mobile-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+  }
+  .mobile-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .mobile-role {
+    color: #00bcd4;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* Hide the typing cursor line on mobile */
+  .cursor {
+    display: none;
+  }
+
+  .animated-text.typewriter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  /* Slide-in Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -70%;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease;
+    z-index: 1001;
+  }
+
+  .mobile-menu.open {
+    left: 0;
+  }
+
+  /* Transparent overlay behind menu for closing */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Mobile menu improvements */
+.mobile-menu-inner {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(15px);
+  width: 90%;
+  max-width: 300px;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 188, 212, 0.6);
+  box-shadow: 0 0 10px rgb(0 31 255), 0 0 60px rgba(0, 188, 212, 0.2) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* stack links vertically */
+  overflow: hidden;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: translateX(-30px);
+  /* padding: 20px 0; top and bottom padding */
+}
+
+
+/* Mobile menu list */
+.mobile-menu-inner ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* full width for lines */
+  gap: 15px; /* space between items */
+  padding: 0 20px;
+  margin: 0;
+  list-style: none;
+}
+
+/* Menu items */
+.mobile-menu-inner ul li {
+  position: relative;
+  padding: 10px 0;
+}
+
+/* Add dividing line below each item except last */
+.mobile-menu-inner ul li:not(:last-child)::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: rgba(0, 188, 212, 0.4);
+  margin-top: 5px;
+}
+
+/* Link styles */
+.mobile-menu-inner ul li a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+  position: relative;
+}
+
+/* Hover effect: underline + glow */
+.mobile-menu-inner ul li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.mobile-menu-inner ul li a:hover::before {
+  width: 100%;
+}
+
+.mobile-menu-inner ul li a:hover {
+  transform: rotate(-2deg) scale(1.05);
+  text-shadow: 0 0 8px #00bcd4;
+}
+}

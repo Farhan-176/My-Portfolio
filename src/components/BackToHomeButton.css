@@ -1,0 +1,25 @@
+.floating-back-to-home {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5b8cff, #6be7c9);
+  color: #081024;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(91, 140, 255, 0.35);
+  z-index: 1000;
+  transform: translateY(calc(-50% + 60px));
+}
+.floating-back-to-home:hover { transform: translateY(calc(-50% + 58px)); }
+
+@media (max-width: 800px) {
+  .floating-back-to-home { right: 14px; top: auto; bottom: 18px; width: 44px; height: 44px; transform: none; }
+  .floating-back-to-home:hover { transform: translateY(-2px); }
+}

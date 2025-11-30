@@ -1,0 +1,317 @@
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 50px;
+  background: transparent;
+  color: #fff;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  z-index: 1;
+}
+
+/* Container with vertical heading */
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+}
+
+/* Vertical "ABOUT ME" Heading on Left Side - DESKTOP ONLY */
+.vertical-heading {
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: flex;
+  align-items: center;
+}
+
+.vertical-heading h2 {
+  font-size: 4em;
+  font-weight: 800;
+  letter-spacing: 8px;
+  background: linear-gradient(180deg, #fdfdff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(91, 140, 255, 0.3);
+}
+
+/* Main content area */
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ============================================
+   DESKTOP STYLES
+   ============================================ */
+
+/* Professional Role Selector Tabs */
+.role-selector {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.role-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.role-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(91, 140, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.role-tab:hover::before {
+  left: 100%;
+}
+
+.role-tab:hover {
+  border-color: #5b8cff;
+  background: rgba(91, 140, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(91, 140, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.role-tab.active {
+  background: linear-gradient(135deg, #5b8cff, #9a6cff);
+  border-color: transparent;
+  box-shadow: 0 8px 30px rgba(91, 140, 255, 0.5);
+}
+
+.role-tab.active:hover {
+  background: linear-gradient(135deg, #6a9bff, #a87cff);
+}
+
+.role-icon {
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+}
+
+.role-text {
+  white-space: nowrap;
+}
+
+/* Combined Bio - Desktop */
+.combined-bio {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  min-height: 350px;
+}
+
+.bio-heading {
+  font-size: 2em;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff8da1, #ffd97f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.bio-content p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.bio-content .highlight {
+  color: #5b8cff;
+  font-weight: 600;
+}
+
+.bio-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ============================================
+   MOBILE STYLES (Matching HeroSection)
+   ============================================ */
+
+@media (max-width: 900px) {
+
+  .about-section {
+  /* Add this inside your mobile media query */
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Match HeroSection */
+  /* Optionally add anything else visually matching Hero style */
+}
+
+  .mobile-about {
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vertical-heading {
+    display: none;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+  }
+
+  /* Mobile About Content Container */
+  .mobile-about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Mobile Title - Like HeroSection h1 */
+  .mobile-about-title {
+    font-size: 2.3em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  /* Mobile Role Selector - Like HeroSection buttons */
+  .mobile-role-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 30px;
+  }
+
+  .mobile-role-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(91, 140, 255, 0.15);
+    border: 2px solid rgba(91, 140, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+  }
+
+  .mobile-role-btn:active {
+    transform: scale(0.98);
+  }
+
+  .mobile-role-btn.active {
+    background: linear-gradient(135deg, #5b8cff, #9a6cff);
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(91, 140, 255, 0.4);
+  }
+
+  .mobile-role-btn .role-icon {
+    font-size: 1.3em;
+  }
+
+  /* Mobile Bio Content - Like HeroSection mobile-animation */
+  .mobile-bio-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .mobile-bio-heading {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #5b8cff, #9a6cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .mobile-bio-content p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #ddd;
+  }
+
+  .mobile-bio-content .highlight {
+    color: #5b8cff;
+    font-weight: 600;
+  }
+
+  .mobile-bio-content strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Hide desktop elements on mobile */
+  .role-selector,
+  .combined-bio {
+    display: none;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .vertical-heading h2 {
+    font-size: 3em;
+    letter-spacing: 6px;
+  }
+
+  .about-container {
+    gap: 40px;
+  }
+}

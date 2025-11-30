@@ -1,0 +1,110 @@
+.particle-background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Changed from 100% */
+  z-index: 0;
+  pointer-events: none;
+  background: #0d0d0d;
+  overflow: hidden;
+}
+
+.particle-background-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background Blobs - LARGER & MORE DRAMATIC */
+.bg-shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px); /* Increased blur for softer effect */
+  opacity: 0.7; /* Slightly more visible */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg1 {
+  width: 600px; /* Increased from 400px */
+  height: 600px;
+  top: -150px;
+  left: -150px;
+  background: radial-gradient(circle, #5b8cff, #9a6cff);
+  animation: float1 20s ease-in-out infinite;
+}
+
+.bg2 {
+  width: 500px; /* Increased from 300px */
+  height: 500px;
+  bottom: -120px;
+  right: -120px;
+  background: radial-gradient(circle, #ff8da1, #ffd97f);
+  animation: float2 18s ease-in-out infinite;
+}
+
+.bg3 {
+  width: 400px; /* Increased from 200px */
+  height: 400px;
+  top: 30%;
+  right: -100px;
+  background: radial-gradient(circle, #9a6cff, #ff8da1);
+  animation: float3 22s ease-in-out infinite;
+}
+
+/* NEW: Additional blob for more coverage */
+.bg4 {
+  width: 450px;
+  height: 450px;
+  bottom: 20%;
+  left: -80px;
+  background: radial-gradient(circle, #ffd97f, #5b8cff);
+  animation: float4 25s ease-in-out infinite;
+}
+
+/* Smooth floating animations */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(50px, 60px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-60px, -50px); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, 70px); }
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(60px, -40px); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .bg1 {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .bg2 {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .bg3 {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .bg4 {
+    width: 320px;
+    height: 320px;
+  }
+}
