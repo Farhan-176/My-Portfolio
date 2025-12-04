@@ -27,6 +27,13 @@ const staticProjects = [
     repoUrl: "https://github.com/Farhan-176",
   },
   {
+    title: "Little Lemon Web",
+    description: "Restaurant website with online booking and menu showcase.",
+    tech: ["React", "CSS", "JavaScript"],
+    demoUrl: "https://littlelemonweb176.netlify.app/",
+    repoUrl: "https://github.com/Farhan-176/Littlelemonweb",
+  },
+  {
     title: "Calculator",
     description: "Calculator using HTML, CSS & JavaScript with a clean UI.",
     tech: ["HTML", "CSS", "JavaScript"],
