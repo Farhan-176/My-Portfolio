@@ -6,6 +6,20 @@ const GITHUB_USERNAME = "Farhan-176";
 
 const staticProjects = [
   {
+    title: "Microfinance Loan App",
+    description: "Full-stack microfinance loan management system with React frontend and Node.js backend. Features loan applications, admin dashboard, loan calculator, document uploads, and appointment scheduling.",
+    tech: ["React", "Node.js", "JavaScript", "MongoDB"],
+    demoUrl: "https://microfinance-loan-app.vercel.app/",
+    repoUrl: "https://github.com/Farhan-176/Microfinance-Loan-App",
+  },
+  {
+    title: "Little Lemon App",
+    description: "Completed Little Lemon food ordering app with onboarding, menu filtering, and profile management.",
+    tech: ["React", "TypeScript", "JavaScript"],
+    demoUrl: "https://littlelemonweb.vercel.app/",
+    repoUrl: "https://github.com/Farhan-176/little-lemon-app",
+  },
+  {
     title: "Quiz App",
     description: "Interactive quiz application with scoring and feedback.",
     tech: ["HTML", "CSS", "JavaScript"],
